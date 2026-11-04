@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube sem Home",
+  "version": "0.1.0",
+  "description": "Redireciona a home do YouTube para Inscrições e esconde recomendações e Shorts.",
+  "permissions": ["declarativeNetRequestWithHostAccess"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "redirect_home",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["hide.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

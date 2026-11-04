@@ -1,0 +1,33 @@
+/* Home: evita o flash do feed caso ela chegue a renderizar */
+ytd-browse[page-subtype="home"] {
+  display: none !important;
+}
+
+/* Recomendações ao lado do player (só #related: playlist e chat ficam visíveis) */
+ytd-watch-flexy #related {
+  display: none !important;
+}
+
+/* Sugestões no fim do vídeo */
+.html5-endscreen,
+.ytp-endscreen-content,
+.ytp-ce-element,
+.ytp-fullscreen-grid {
+  display: none !important;
+}
+
+/* Shorts: prateleiras nos feeds e na busca */
+ytd-reel-shelf-renderer,
+ytd-rich-shelf-renderer[is-shorts],
+ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+grid-shelf-view-model:has(ytm-shorts-lockup-view-model),
+ytd-video-renderer:has(a[href^="/shorts/"]),
+ytd-rich-item-renderer:has(a[href^="/shorts/"]) {
+  display: none !important;
+}
+
+/* Shorts: atalhos no menu lateral */
+ytd-guide-entry-renderer:has(a[title="Shorts"]),
+ytd-mini-guide-entry-renderer:has(a[title="Shorts"]) {
+  display: none !important;
+}
